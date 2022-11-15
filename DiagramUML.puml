@@ -7,10 +7,12 @@ abstract class Tiquetes{
 }
 
 class Tiquetes_vip{
++precio
 +opcion()
 }
 
 class Tiquetes_Regular{
++precio
 +opcion()
 }
 
@@ -30,7 +32,8 @@ class Movie_Tickets{
 +opcion()
 }
 class Menu_principal{
-Teatro: Teatro
++Teatro: teatro
++Usuarios: usuarios
 +menu_principal()
 }
 
@@ -52,3 +55,4 @@ Usuarios"*" -left-o  "1"Menu_principal
 Menu_principal"1" -left- "1"Teatro
 
 @enduml
+
