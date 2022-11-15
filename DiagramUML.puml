@@ -1,1 +1,54 @@
+@startuml
 
+class "abc.ABC" as abc{}
+
+abstract class Tiquetes{
++ {abstract} opcion()
+}
+
+class Tiquetes_vip{
++opcion()
+}
+
+class Tiquetes_Regular{
++opcion()
+}
+
+abc <|-- Tiquetes
+Tiquetes<|-- Tiquetes_Regular
+Tiquetes<|-- Tiquetes_vip
+Tiquetes*-right- Teatro
+
+class Usuarios{
++nomusuario: str
++contraseña: str
++registro()
++iniciar_sesion()
+}
+
+class Movie_Tickets{
++opcion()
+}
+class Menu_principal{
+Teatro: Teatro
++menu_principal()
+}
+
+class Teatro{
++Tiquetes: Tiquetes
++seleccionar_pelicula()
++seleccionar_horario()
++seleccionar sillas()
++seleccion_numtiquetes()
+}
+
+
+
+skinparam groupInheritance 1
+Movie_Tickets<|.down.. Menu_principal
+
+Usuarios"*" -left-o  "1"Menu_principal
+
+Menu_principal"1" -left- "1"Teatro
+
+@enduml
